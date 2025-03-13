@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import Login from './components/login';
 import Home from './components/Home';
