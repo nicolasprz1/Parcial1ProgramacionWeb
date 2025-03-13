@@ -1,0 +1,89 @@
+/* src/components/Login.css */
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  /* Columna Izquierda */
+  .login-left {
+    flex: 1;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .brand-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .login-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Columna Derecha */
+  .login-right {
+    flex: 1;
+    background-color: #184c43;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+  }
+  
+  .login-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .login-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  /* Mensajes de error */
+  .login-error {
+    color: red;
+  }
+  
+  /* Botón */
+  .login-button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #00b794;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* Enlace de olvidó la contraseña */
+  .forgot-password {
+    margin-top: 10px;
+  }
+  .forgot-password a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
