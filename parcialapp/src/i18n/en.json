@@ -1,0 +1,16 @@
+{
+    "brandTitle": "TOO GOOD TO GO",
+    "brandSubtitle": "Food Wasting Solution",
+    "loginTitle": "Login",
+    "usernameLabel": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordError": "Password must have 6 or 7 characters.",
+    "loginButton": "Login",
+    "forgotPasswordLink": "Forgot Password?",
+    "menuTitle": "Menu",
+    "storesTitle": "Stores",
+    "cartTitle": "Cart"
+  }
+  

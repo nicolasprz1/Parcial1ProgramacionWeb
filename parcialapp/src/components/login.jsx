@@ -1,31 +1,38 @@
 // src/components/Login.jsx
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Login({ onLoginSuccess }) {
+  const { t, i18n } = useTranslation();
+
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validación (6-7 caracteres):
-    if (password.length < 5 || password.length > 8) {
-      setErrorMsg('La contraseña debe tener 5 o 8 caracteres.');
+    // Validación de 6 o 7 caracteres
+    if (password.length < 6 || password.length > 7) {
+      setErrorMsg(t('passwordError'));
       return;
     }
     setErrorMsg('');
-    onLoginSuccess(); // O la lógica que uses para cambiar de vista
+    onLoginSuccess();
   };
 
   return (
     <div style={styles.container}>
-      {/* Izquierda: Imagen y branding */}
+      {/* Botones para cambiar idioma, ubicados en la esquina */}
+      <div style={styles.languageSwitch}>
+        <button onClick={() => i18n.changeLanguage('es')}>ES</button>
+        <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+      </div>
+
+      {/* Columna izquierda: Imagen + branding */}
       <div style={styles.leftSide}>
         <div style={styles.brandContainer}>
-          {/* Logo / Título */}
-          <h2 style={{ marginBottom: '10px' }}>TOO GOOD TO GO</h2>
-          <p style={{ fontStyle: 'italic' }}>Food Wasting Solution</p>
-          {/* Imagen ejemplo */}
+          <h2 style={{ marginBottom: '10px' }}>{t('brandTitle')}</h2>
+          <p style={{ fontStyle: 'italic' }}>{t('brandSubtitle')}</p>
           <img
             src="https://www.laachicoria.es/wp-content/uploads/plato_perfecto_destacada.jpg"
             alt="Comida"
@@ -34,15 +41,15 @@ function Login({ onLoginSuccess }) {
         </div>
       </div>
 
-      {/* Derecha: Formulario de Login */}
+      {/* Columna derecha: Formulario de Login */}
       <div style={styles.rightSide}>
-        <h1 style={{ marginBottom: '20px' }}>Login</h1>
+        <h1 style={{ marginBottom: '20px' }}>{t('loginTitle')}</h1>
         <form onSubmit={handleSubmit} style={styles.form}>
           <label style={styles.label}>
-            Username
+            {t('usernameLabel')}
             <input
               type="text"
-              placeholder="Enter your username"
+              placeholder={t('usernamePlaceholder')}
               style={styles.input}
               value={user}
               onChange={(e) => setUser(e.target.value)}
@@ -50,27 +57,25 @@ function Login({ onLoginSuccess }) {
           </label>
 
           <label style={styles.label}>
-            Password
+            {t('passwordLabel')}
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder={t('passwordPlaceholder')}
               style={styles.input}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
 
-          {/* Si hay error, lo mostramos en rojo */}
+          {/* Mostrar error si existe */}
           {errorMsg && <p style={{ color: 'red' }}>{errorMsg}</p>}
 
-          {/* Botón de Login */}
           <button type="submit" style={styles.loginButton}>
-            Login
+            {t('loginButton')}
           </button>
 
-          {/* Link de "Forgot Password?" */}
           <p style={{ marginTop: '10px' }}>
-            <a href="#!" style={{ color: '#fff' }}>Forgot Password?</a>
+            <a href="#!" style={{ color: '#fff' }}>{t('forgotPasswordLink')}</a>
           </p>
         </form>
       </div>
@@ -78,12 +83,18 @@ function Login({ onLoginSuccess }) {
   );
 }
 
-// Estilos en JS
+// Estilos en línea (misma estructura, con un contenedor principal a dos columnas)
 const styles = {
   container: {
     display: 'flex',
     height: '100vh',
     fontFamily: 'sans-serif',
+    position: 'relative' // Para ubicar languageSwitch con position absolute
+  },
+  languageSwitch: {
+    position: 'absolute',
+    top: '10px',
+    right: '10px'
   },
   leftSide: {
     flex: 1,

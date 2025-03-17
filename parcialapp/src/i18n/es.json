@@ -1,0 +1,16 @@
+{
+    "brandTitle": "TOO GOOD TO GO",
+    "brandSubtitle": "Solución de Desperdicio de Comida",
+    "loginTitle": "Iniciar Sesión",
+    "usernameLabel": "Usuario",
+    "usernamePlaceholder": "Ingresa tu usuario",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "passwordError": "La contraseña debe tener 6 o 7 caracteres.",
+    "loginButton": "Ingresar",
+    "forgotPasswordLink": "¿Olvidaste tu contraseña?",
+    "menuTitle": "Menú",
+    "storesTitle": "Tiendas",
+    "cartTitle": "Carrito"
+  }
+  
